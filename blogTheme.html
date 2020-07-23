@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta name="if:Infinite Scroll" content="0">
+        <meta name="image:Main Image" content="">
+        <meta name="if:Image in Grayscale" content="0">
+        <meta name="select:Image Position" content="Top Left" title="Top Left">
+        <meta name="select:Image Position" content="Top Center" title="Top Center">
+        <meta name="select:Image Position" content="Top Right" title="Top Right">
+        <meta name="select:Image Position" content="Center Left" title="Center Left">
+        <meta name="select:Image Position" content="Center Center" title="Center Center">
+        <meta name="select:Image Position" content="Center Right" title="Center Right">
+        <meta name="select:Image Position" content="Bottom Left" title="Bottom Left">
+        <meta name="select:Image Position" content="Bottom Center" title="Bottom Center">
+        <meta name="select:Image Position" content="Bottom Right" title="Bottom Right">
+        <meta name="text:RGB Accent" content="0, 0, 0">
+        <!---- theme by http://codesbylux.tumblr.com --->
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="https://64.media.tumblr.com/03a9fb4f8ea2adef05823e8837d53c00/f085a8c0d0f1a575-42/s250x400/a44beae897fa1f73149c018a72bdf067b9e9b62b.png">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <script src="https://kit.fontawesome.com/66e864331c.js" crossorigin="anonymous"></script>
+        <script src="https://dawneggleton.github.io/scripts/jquery-1.12.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    </head>
+    
+    
+    <body>
+        <header>
+            <span>{Description}</span>
+            <h1>{Title}</h1>
+        </header>
+        <aside>
+            <a href="BLOG URL FOR MAIN PAGE">
+                <i class="fal fa-home"></i>
+                <b>home</b>
+            </a>
+            <!-- SIDE LINK START -->
+            <a href="URL">
+                <i class="fal fa-iconname"></i>
+                <b>pagename</b>
+            </a>
+            <!-- SIDE LINK END -->
+            <div class="pagination">
+                <span>
+                    {block:Pagination}
+                        {block:PreviousPage}
+                            <a href="{PreviousPage}"><i class="far fa-angle-left"></i></a>
+                        {/block:PreviousPage}
+                        {block:NextPage}
+                            <a href="{NextPage}" class="next"><i class="far fa-angle-right"></i>
+                        </a>{/block:NextPage}
+                    {/block:Pagination}
+                </span>
+                <b>pages</b>
+            </div>
+        </aside>
+        <section class="static main">
+            <img src="" />
+            <div class="scroll">
+                <div class="masonry">
+                    {block:Posts}
+                        <article class="post">
+                        
+                            <div class="topInfo">
+                                <a href="{RelativePermalink}">
+                                    {block:Date}
+                                        <span title="{Month} {DayOfMonth}, {Year} at {12Hour}:{Minutes}{CapitalAmPm}">
+                                            Posted {TimeAgo}
+                                        </span>
+                                    {/block:Date}
+                                </a>
+                                <span class="topLinks">
+                                    <a href="{ReblogURL}">
+                                        <i class="fal fa-retweet"></i>
+                                    </a>
+                                </span>
+                            </div>
+                            
+                            
+                            
+                            {block:Text}
+                                {block:Title}<h2>{Title}</h2>{/block:Title}
+                                <div class="ans" style="padding-top:0">
+                                    {Body}
+                                </div>
+                            {/block:Text}
+                            
+                            {block:Quote}
+                                {Quote}
+                                <div class="source">&mdash; {Source}</div>
+                            {/block:Quote}
+                            
+                            {block:Photo}
+                                <span class="photoSingle">
+                                <a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}"></a>
+                                </span>
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            {/block:Photo}
+                            
+                            {block:Photoset}
+                                <div class="photoSet">
+                                    <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div>
+                                </div>
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            {/block:Photoset}
+                            
+                            {block:Link}
+                                <div class="webs">
+                                    <a href="{URL}" {Target}>{Name}</a>
+                                </div>
+                                {block:Description}
+                                    <div class="ans">{Description}</div>
+                                {/block:Description}
+                            {/block:Link}
+            
+                            {block:Chat}
+                                <div class="chat">
+                                    {block:Title}
+                                        <h1>{Title}</h1>
+                                    {/block:Title}
+                                    {block:Lines}
+                                        <li class="line {Alt}">
+                                            {block:Label}
+                                                <b>{Label}</b>
+                                            {/block:Label}
+                                            {Line}
+                                        </li><br>
+                                    {/block:Lines}
+                                </div>
+                            {/block:Chat}
+            
+                            {block:Answer}
+                                <div class="question">
+                                    <div class="akport">{Asker}:</div>
+                                    {Question}
+                                </div>
+                                <div class="ans">{Answer}</div>
+                            {/block:Answer}
+                
+                            {block:Audio}
+                                {AudioPlayerWhite}
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            {/block:Audio}
+                
+                            {block:Video}
+                                <div class="fullVid"><center>
+                                    {Video-400}
+                                </center></div>
+                                <div class="smlVid"><center>
+                                    {Video-250}
+                                </center></div>
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            {/block:Video}
+                            
+                            
+                            
+                            {block:HasTags}
+                            <div class="bottomInfo">
+                                {block:Tags}
+                                    <a href="{TagURL}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                            {/block:HasTags}
+                        </article>
+                        
+                        {block:PermalinkPage}
+                            <div class="section">
+                                <h1>notes</h1>
+                                {block:PostNotes}
+                                    <div class="notes">
+                                        {PostNotes-64}
+                                    </div>
+                                {/block:PostNotes}
+                            </div>
+                        {/block:PermalinkPage}
+                    {/block:Posts}
+                </div>
+            </div>
+        </section>
+    
+    
+        <style>
+            /*VARIABLES*/
+            :root {
+                --topBar: 100px;
+                --leftBar: 100px;
+                --serifFont: 'Cormorant', serif;
+                --bodyFont: 'Open Sans', sans-serif;
+                
+                --xsBody: 8px;
+                --sBody: 10px;
+                --mBody: 12px;
+                --lBody: 14px;
+                --xlBody: 16px;
+                
+                --xsHead: 20px;
+                --sHead: 24px;
+                --mHead: 28px;
+                --lHead: 32px;
+                --xlHead: 36px;
+                
+                --white-10: rgba(255, 255, 255, 0.1);
+                --white-70: rgba(255, 255, 255, 0.7);
+                --white: rgba(255, 255, 255, 1);
+                
+                --accent-5: rgba({text:RGB Accent}, 0.05);
+                --accent-10: rgba({text:RGB Accent}, 0.1);
+                --accent-20: rgba({text:RGB Accent}, 0.2);
+                --accent-80: rgba({text:RGB Accent}, 0.8);
+                --accent: rgba({text:RGB Accent}, 1);
+            }
+            body {
+                font-family: var(--bodyFont);
+                font-size: var(--mBody);
+                line-height: 200%;
+                letter-spacing: 0.5px;
+            }
+            a {
+                text-decoration: none;
+            }
+            .tmblr-iframe.iframe-controls--desktop {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: max-content;
+                transform: scale(60%) translateX(-30%);
+            }
+            {block:PermalinkPage}
+                .tmblr-iframe.iframe-controls--desktop {
+                    width: 380px;
+                    transform: scale(60%) translateX(-30%);
+                }
+            {/block:PermalinkPage}
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: var(--topBar);
+                background: var(--accent);
+                color: var(--white);
+                display: grid;
+                grid-template: 1fr / auto max-content;
+                grid-column-gap: 50px;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 0 30px;
+            }
+            header h1,
+            header h1 span{
+                font-family: var(--serifFont);
+                text-transform: lowercase;
+                font-size: var(--xlHead);
+            }
+            header a,
+            header span {
+                color: var(--white);
+                font-family: var(--bodyFont);
+                font-size: var(--xsBody);
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+            aside {
+                position: fixed;
+                top: var(--topBar);
+                left: 0;
+                height: calc(100vh - var(--topBar));
+                width: var(--leftBar);
+                background: var(--accent-80);
+                color: var(--white);
+                box-sizing: border-box;
+                padding: 20px;
+            }
+            aside > a,
+            aside > div {
+                display: grid;
+                grid-row-gap: 7px;
+                width: 60px;
+                height: 60px;
+                background: var(--white-10);
+                margin-bottom: 20px;
+                box-sizing: border-box;
+                padding: 5px;
+                text-align: center;
+                color: var(--white-70);
+            }
+            aside > a.active,
+            aside > a:hover,
+            aside > div:hover {
+                color: var(--white);
+                background: var(--accent);
+            }
+            aside > div span {
+                line-height: 0;
+                align-self: end;
+            }
+            aside > div a {
+                color: var(--white-70);
+            }
+            aside > div a:first-child:not(:only-child) {
+                margin-right: 10px;
+            }
+            aside > div a:hover {
+                color: var(--white);
+            }
+            aside > a i,
+            aside > div i {
+                font-size: var(--xlBody);
+                align-self: end;
+            }
+            aside > a b,
+            aside > div b {
+                font-family: var(--bodyFont);
+                font-size: var(--xsBody);
+                letter-spacing: 1px;
+                line-height: 100%;
+                text-transform: uppercase;
+            }
+            section {
+                position: fixed;
+                top: var(--topBar);
+                right: 0;
+                width: calc(100% - var(--leftBar));
+                height: calc(100vh - var(--topBar));
+                background: var(--white);
+                box-sizing: border-box;
+                display: none;
+                grid-template: 1fr / 1fr 1fr;
+                letter-spacing: 1px;
+                font-size: var(--lBody);
+                font-weight: 300;
+            }
+            section.active,
+            section.static {
+                display: grid;
+            }
+            section.main > img {
+                object-position: {select:Image Position};
+            }
+            {block:ifImageinGrayscale}
+                section.main > img {
+                    filter: grayscale(100%);
+                }
+            {/block:ifImageinGrayscale}
+            section > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            section h2 {
+                font-family: var(--serifFont);
+                font-size: var(--lHead);
+                text-transform: lowercase;
+                font-weight: 700;
+                margin: 50px 0 15px 0;
+            }
+            section h2:first-child {
+                margin-top: 0;
+            }
+            section strong {
+                font-family: var(--serifFont);
+                font-size: var(--xsHead);
+                font-style: italic;
+                font-weight: 700;
+                letter-spacing: 0;
+            }
+            .scroll {
+                margin: 30px;
+                height: calc(100% - 60px);
+                overflow: auto;
+                padding-right: 30px;
+                scrollbar-width: thin;
+                scrollbar-color: var(--accent) transparent;
+            }
+            .scroll.mason {
+                padding-right: 0;
+            }
+            article,
+            .section{
+                background: var(--accent-5);
+                width: calc(100% - 30px);
+                box-sizing: border-box;
+                margin: 0 30px 30px 0;
+                font-size: var(--mBody);
+                color: var(--accent-80);
+            }
+            .photoSingle {
+                display: block;
+                padding: 20px 40px;
+            }
+            .photoSingle img {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+                height: auto;
+            }
+            blockquote {
+                margin: 0;
+                padding: 0 0 0 10px;
+                border-left: 1px solid var(--accent-20);
+            }
+            blockquote img {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+                height: auto;
+            }
+            figure img {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+                height: auto;
+            }
+            article a,
+            .section a {
+                font-size: var(--sBody);
+                text-transform: uppercase;
+                color: var(--accent);
+                font-weight: bold;
+            }
+            article b,
+            .section b {
+                font-size: var(--lBody);
+                font-weight: bold;
+                color: var(--accent);
+            }
+            .photoSet,
+            .ans,
+            .caption {
+                padding: 20px 40px;
+            }
+            .topInfo,
+            .bottomInfo {
+                font-family: var(--bodyFont);
+                font-size: 0;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: bold;
+                color: var(--black);
+                background: var(--accent-5);
+            }
+            .topInfo a,
+            .bottomInfo a {
+                font-size: var(--xsBody);
+                color: var(--black);
+            }
+            .topInfo {
+                display: grid;
+                grid-template-columns: auto max-content;
+                padding: 5px 10px;
+                margin-bottom: 20px;
+            }
+            .bottomInfo {
+                padding: 5px 10px 0;
+                margin-top: 20px;
+            }
+            .bottomInfo a {
+                display: inline-block;
+                margin: 0 5px 5px 0;
+            }
+            article h2,
+            .section h2 {
+              margin: 0 20px;
+            }
+            .section h1 {
+              background: var(--accent-5);
+              padding: 20px;
+              font-family: var(--serifFont);
+              font-weight: bold;
+              font-size: var(--xsHead);
+              text-transform: lowercase;
+              margin: 0 0 20px;
+            }
+            ol.notes {
+              font-size: var(--xsBody);
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin: 0;
+              padding: 0 20px 20px;
+            }
+            .notes li {
+              list-style: none;
+            }
+            .notes img {
+              display: none;
+            }
+            .notes a {
+              font-size: var(--xsBody);
+            }
+            p:last-child {
+                margin-bottom: 0;
+            }
+            p:first-child {
+                margin-top: 0;
+            }
+        </style>
+        
+        <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://static.tumblr.com/yxfeliq/hHwojmt8m/bctphotoset.min.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
+        <script>
+        $(document).ready(function(){
+           $('.photo-slideshow').pxuPhotoset({
+               lightbox: true,
+               rounded: false,
+               gutter: '3px',
+               photoset: '.photo-slideshow',
+               photoWrap: '.photo-data',
+               photo: '.pxu-photo'
+           });
+           /*
+           var msnry = new Masonry( '.masonry', {
+              itemSelector: 'article',
+              horizontalOrder: true,
+              percentPosition: true
+            });
+            */
+            {block:IndexPage}
+           var infScroll = new InfiniteScroll( '.masonry', {
+              path: '.next',
+              append: 'article',
+              checkLastPage: false,
+              prefill: false,
+              // Loads and appends pages on intialization until scroll requirement is met.
+              responseType: 'document',
+              //outlayer: msnry,
+              scrollThreshold: 400,
+              elementScroll: '.scroll',
+              loadOnScroll: true,
+              hideNav: '.pagination',
+              history: false,
+              prefill: true,
+              debug: false
+            });
+            infScroll.on( 'append', function( response, path, items ) {
+               $('.photo-slideshow').pxuPhotoset({
+                   lightbox: true,
+                   rounded: false,
+                   borderRadius: '0px',
+                   gutter: '3px',
+                   photoset: '.photo-slideshow',
+                   photoWrap: '.photo-data',
+                   photo: '.pxu-photo'
+                });
+            });
+            {/block:IndexPage}
+        });
+        var loc = window.location.href; // returns the full URL
+        if (/adaline/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/55f064870f009aec144dde90018ac6a9/0aa4aa034de15028-6e/s1280x1920/f6bd47927fc081419eee1e76734129376d8ecfd7.jpg');
+        } else if (/alastair/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/725236078c2fed17a312f84d41432936/tumblr_p2mo6ipVzd1vz2ghao5_500.jpg');
+        } else if (/alexander/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/5f8880d005767858a1c3e49c14ec08ec/0c8bcf587df830d2-83/s500x750/6bfa990f04926eb19c9800ebe3223ffd5c2638f1.jpg');
+        } else if (/avery/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/8b3d345c3851129c6f5ff2b019e5b444/tumblr_p2ile5o1PK1vz2ghao9_500.jpg');
+        } else if (/basil/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/e415c595b251dc8abae9ca74b88bf911/tumblr_p2s8nyY8Zb1vz2ghao9_500.jpg');
+        } else if (/brennan/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/940cd7d53247eaf95a543d2fc02e484c/tumblr_p2j7yd83P81vz2ghao4_1280.jpg');
+        } else if (/bryn/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/2cf6853be602a9c27a64b2878235d245/255b4de1638d9f68-e3/s1280x1920/d03354d0af439c49e5775424f098c45051d9f836.jpg');
+        } else if (/cain/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/3836ded0557ffc7b74c72ee1a950e89b/ed581221ff8c62b8-5e/s640x960/6b277f53d5a314ceb80c509d3f746330bcf15171.jpg');
+        } else if (/casper/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/558edc126b6c820acb3659b59f68b277/tumblr_p2il8zzm1o1vz2ghao4_1280.jpg');
+        } else if (/connor/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/68da1a5f9c709e20dce5b074c06140e4/tumblr_p2j7rtOXfQ1vz2ghao9_1280.jpg');
+        } else if (/corey/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/c50f1f31674c061199ea4dcc325cade3/31b11660c90a5de1-93/s500x750/136c99a1bcd2b42a8074ff2814b6330ab1d62f2d.jpg');
+        } else if (/cynbel/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/76440e43cbdc87b1116196f37849f222/511317c6596bdf04-c7/s1280x1920/c37af67e6d9094490a1e5152193582f8a70c98ae.jpg');
+        } else if (/dalton/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/57437021bb596365f1c79ced5a2804e2/6dfd61eaeecbd944-c3/s1280x1920/b16b96b1d11b6762be89683aa3030dd8c7818a2e.jpg');
+        } else if (/darcy/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/e848a360c6055af949fb75c0f5fa3eea/6f6bd7accf780d07-42/s1280x1920/48ff395c58e9d54177fec54e89964a14de6f4288.jpg');
+        } else if (/draco/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/ebe6402943991d372912d41554931263/a9a9631aa34e0198-18/s500x750/1726b1f33b5b4cb09b5f011c3291fe0b22ceb914.jpg');
+        } else if (/duck/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/de7aa940dd130a1dc7c3a30dadd80c74/tumblr_pyljuakclp1vz2ghao10_1280.jpg');
+        } else if (/elias/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/0c1962cc313e41b86624f4d13f7e434a/7824eb75844992f6-5a/s640x960/1650569db18ed97cfcbb8fa1e1cb2708bb5d64ef.jpg');
+        } else if (/emma/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/62744e500f2a04e7bf8c64fcd4ef0a2c/03645682569b08ff-81/s1280x1920/1198da00cdbaf6ee4d2d28d0024d9cdd26ae9af0.jpg');
+        } else if (/evan/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/95d5270fe9303d45575e522a4d54bb18/ce290a1f895136e7-be/s540x810/f480934e46b96833d7f99bba9762511fbdcd29fd.png');
+        } else if (/gabriel/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/5da099166712df27431bc71437795022/dcbc21e72d07323a-0c/s640x960/9389de45af00bdb6250bf759661a517bd983b3eb.jpg');
+        } else if (/hallie/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/740b8c9bde297a28d19350b3d603b6be/f30128fefe2c3656-33/s1280x1920/a18ad2d5a2906be3e43fefc1750d52f0559c8cca.jpg');
+        } else if (/harley/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/33f84df7a0a60b3c4efc1dc0332401ea/f53b43e050eba71b-82/s1280x1920/7982e5e02396ddc449efdbe866dee7008f21092d.jpg');
+        } else if (/hayden/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/9cf119dc8a850b8aadf1643961980879/d11abbca8359c565-eb/s640x960/a7a1681e5b501220a34c1efd04b2fd5b74cfa83e.jpg');
+        } else if (/jazz/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/dcb1c67cd785eacb3d695c12657df44f/tumblr_p2ilgisqHc1vz2ghao2_640.jpg');
+        } else if (/kit/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/177cf03df058209ecf137538fc3b82a7/tumblr_p2ilbqi0bH1vz2ghao2_500.png');
+        } else if (/lorelei/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/733ea5f0aed34462fe552ccc8fb6590a/tumblr_p3wy8c4jOs1vz2ghao10_500.png');
+        } else if (/lottie/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/3df93ae4c4fc6468b314a27f18cc7582/42d0a2483374596d-c6/s1280x1920/00eb9caaf25858fd67e693cf737e9d0620e59139.jpg');
+        } else if (/maggie/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/4ac4b2a4ff1d3d0709a036dda0e02819/d2195c8e2e91e7d5-da/s1280x1920/8f2c1b493a6ee9ab100ae5196627b5b59b97087b.jpg');
+        } else if (/malcolm/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/289e7830f83c0545498ba6ae4333c1ca/tumblr_p3wz67wAPP1vz2ghao8_640.jpg');
+        } else if (/marica/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/3f9d384bef4901539d94566abb75a78b/c48723f9845c9d9c-c5/s1280x1920/2936be9f36623c455af43e73b5675696a8ea0634.jpg');
+        } else if (/maverick/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/886cf751befae31f253d0a22b48023eb/93df2e3ce90c1334-ee/s1280x1920/2576082c341daecb29f6116a1bf3b41d25aba77f.jpg');
+        } else if (/milo/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/43c5d502a38247ec1300a9614dd43007/beb102ef60775fc4-fc/s1280x1920/6f5913aba5648b0382dfeb22a78654b41a50b3f7.jpg');
+        } else if (/monty/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/78bfcdde30a6a623c543e664fe04d988/tumblr_p2mnhgDeYF1vz2ghao3_640.jpg');
+        } else if (/morgan/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/52a3edc734b910ad212b0260a2001ed8/a9b3d30677fcfbb1-6b/s1280x1920/472a2844e5c27d64c90b55042c2b667c93081c89.jpg');
+        } else if (/tesla/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/635e5203e6ebb4501225635b67b63fb4/tumblr_p2ml9bYsBL1vz2ghao5_500.jpg');
+        } else if (/nik/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/9ee7b30e3403fdbed6b2297ba347420f/tumblr_p2j7c9SKax1vz2ghao7_1280.jpg');
+        } else if (/noah/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/dfb25d809b6cb01bad65a1464474a0d0/8c8ba22740bd31eb-09/s1280x1920/ee230b06753a3c11342d571a311f7cabfab3f800.jpg');
+        } else if (/oliver/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/06f60917fda985cee8049e0d2c4c0bda/tumblr_p2j6khVJAw1vz2ghao3_1280.jpg');
+        } else if (/sephi/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/54341d4f1e1577ba34c1b589e2ed471a/tumblr_p2s9w3wYcf1vz2ghao5_1280.jpg');
+        } else if (/remy/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/f274dcab4c2ccd255c72f915858234cc/tumblr_p2sa3j2Smz1vz2ghao4_500.jpg');
+        } else if (/riven/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/42cf5a3ec94c2e00a3a72943e2b8b5d0/tumblr_p2mo9axj7O1vz2ghao8_1280.jpg');
+        } else if (/satiah/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/e0bf6d6735646a5aca6cc008d80c37f4/tumblr_pyloafSHEF1vz2ghao8_1280.jpg');
+        } else if (/simon/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/f4f9d128d1d83f68c6ba6005259f11ca/tumblr_ofx3j2v4XI1vsh74co1_640.jpg');
+        } else if (/sorren/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/4bed53f4523000b312f79218ba309dba/8ea8d43426ea6567-55/s1280x1920/caa3f6483347d6b28c601a1a698e03492bb12a8b.jpg');
+        } else if (/spencer/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/f3cbeb06c988e0c6ab6af8911cfeea4a/tumblr_p2s9rxYaMm1vz2ghao1_1280.jpg');
+        } else if (/sterling/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/b7566e3d90cf94f600c9fa2a92263538/c2c95cd4653a9c80-1b/s640x960/90f4f78d373132dddb075fddb78912cb01d74b38.jpg');
+        } else if (/tobias/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/d6eb233c00bb4a72a1713ea43a2690f2/d586c04e79fbd446-5a/s640x960/c51bfbf2d6dcdf56e5955ba72a5029ee081ad3c4.jpg');
+        } else if (/vitae/.test(loc)) {
+            $('.main > img').attr('src', 'https://64.media.tumblr.com/d0957bfec9fba4022617dff4fa76be44/tumblr_p2ilmfTA5o1vz2ghao5_1280.jpg');
+        } else {
+            $('.main > img').attr('src', '{image:Main Image}');
+        }
+        </script>
+    </body>
+</html>

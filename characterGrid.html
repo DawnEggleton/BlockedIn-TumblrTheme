@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <!---- theme by http://codesbylux.tumblr.com --->
+        <title>PAGE TITLE</title>
+        <link rel="shortcut icon" href="https://64.media.tumblr.com/03a9fb4f8ea2adef05823e8837d53c00/f085a8c0d0f1a575-42/s250x400/a44beae897fa1f73149c018a72bdf067b9e9b62b.png">
+        <script src="https://kit.fontawesome.com/66e864331c.js" crossorigin="anonymous"></script>
+        <script src="https://dawneggleton.github.io/scripts/jquery-1.12.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    </head>
+    
+    
+    <body>
+       <header>
+            <a></a>
+            <h1>PAGE TITLE</h1>
+        </header>
+        <aside>
+            <a href="BLOG URL FOR MAIN PAGE">
+                <i class="fal fa-home"></i>
+                <b>home</b>
+            </a>
+            <!-- SIDE LINK START -->
+            <a href="URL">
+                <i class="fal fa-iconname"></i>
+                <b>pagename</b>
+            </a>
+            <!-- SIDE LINK END -->
+        </aside>
+        <section class="static twoSect">
+            <div class="filters">
+            
+                <!-- FILTER GROUP START -->
+                <div class="filtergroup" data-filter-group="FILTERGROUPNAME">
+                    <h2>filter group name</h2>
+                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked/>all</label>
+                    <label><input type="checkbox" value=".keyword"/>filter option</label>
+                    <label><input type="checkbox" value=".keyword2"/>filter option 2</label>
+                </div>
+                <!-- FILTER GROUP END -->
+                
+            </div>
+            <div class="scroll mason">
+                <div class="charlist">
+
+                    <!-- CHARACTER START -->
+                    <div class="grid-item keywords">
+                        <img src="IMAGE URL">
+                        <div class="charInfo">
+                            <h2>name</h2>
+                            <span>
+                                <a href="URL">about</a>
+                                <a href="URL">posts</a>
+                                <a href="URL">images</a>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- CHARACTER END -->
+                    
+                </div>
+            </div>
+        </section>
+    </body>
+    
+    
+    <style>
+        /*VARIABLES*/
+        :root {
+            --topBar: 100px;
+            --leftBar: 100px;
+            --serifFont: 'Cormorant', serif;
+            --bodyFont: 'Roboto', sans-serif;
+            
+            --xsBody: 8px;
+            --sBody: 10px;
+            --mBody: 12px;
+            --lBody: 14px;
+            --xlBody: 16px;
+            
+            --xsHead: 20px;
+            --sHead: 24px;
+            --mHead: 28px;
+            --lHead: 32px;
+            --xlHead: 36px;
+            
+            --white-20: rgba(255, 255, 255, 0.2);
+            --white-80: rgba(255, 255, 255, 0.80);
+            --white: rgba(255, 255, 255, 1);
+            
+            --accent-5: rgba(0, 0, 0, 0.05);
+            --accent-80: rgba(0, 0, 0, 0.8);
+            --accent: rgba(0, 0, 0, 1);
+        }
+        body {
+            font-family: var(--bodyFont);
+            font-size: var(--mBody);
+            line-height: 200%;
+            letter-spacing: 0.5px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .tmblr-iframe.iframe-controls--desktop {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: max-content;
+            transform: scale(60%) translateX(-30%);
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--topBar);
+            background: var(--accent);
+            color: var(--white);
+            display: grid;
+            grid-template: 1fr / auto max-content;
+            grid-column-gap: 50px;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 30px;
+        }
+        header h1 {
+            font-family: var(--serifFont);
+            text-transform: lowercase;
+            font-size: var(--xlHead);
+        }
+        header a {
+            color: var(--white);
+            font-family: var(--bodyFont);
+            font-size: var(--sBody);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        aside {
+            position: fixed;
+            top: var(--topBar);
+            left: 0;
+            height: calc(100vh - var(--topBar));
+            width: var(--leftBar);
+            background: var(--accent-80);
+            color: var(--white);
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        aside a {
+            display: grid;
+            grid-row-gap: 7px;
+            width: 60px;
+            height: 60px;
+            background: var(--white-20);
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            padding: 5px;
+            text-align: center;
+            color: var(--white-80);
+            
+        }
+        aside a.active,
+        aside a:hover {
+            color: var(--white);
+            background: var(--accent);
+        }
+        aside a i {
+            font-size: var(--xlBody);
+            align-self: end;
+        }
+        aside a b {
+            font-family: var(--bodyFont);
+            font-size: var(--xsBody);
+            letter-spacing: 1px;
+            line-height: 100%;
+            text-transform: uppercase;
+        }
+        section {
+            position: fixed;
+            top: var(--topBar);
+            right: 0;
+            width: calc(100% - var(--leftBar));
+            height: calc(100vh - var(--topBar));
+            background: var(--white);
+            box-sizing: border-box;
+            display: none;
+            grid-template: 1fr / 1fr 1fr;
+            letter-spacing: 1px;
+            font-size: var(--lBody);
+            font-weight: 300;
+        }
+        section.active,
+        section.static {
+            display: grid;
+        }
+        section.static {
+            grid-template: max-content auto / 1fr;
+        }
+        section > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        section h2 {
+            font-family: var(--serifFont);
+            font-size: var(--lHead);
+            text-transform: lowercase;
+            font-weight: 700;
+            margin: 50px 0 15px 0;
+        }
+        section h2:first-child {
+            margin-top: 0;
+        }
+        section strong {
+            font-family: var(--serifFont);
+            font-size: var(--xsHead);
+            font-style: italic;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+        .filters {
+            padding: 20px;
+            background: var(--accent-5);
+            display: grid;
+            grid-template: 1fr / repeat(4, 1fr);
+            grid-column-gap: 20px;
+            font-size: 0;
+        }
+        .filters input {
+            display: none;
+        }
+        .filters label {
+            display: inline-block;
+            font-size: var(--xsBody);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--accent-5);
+            padding: 5px 10px;
+            line-height: 100%;
+            border-radius: 10px;
+            margin: 0 3px 3px 0;
+        }
+        .filters label.is-checked {
+            background: var(--accent);
+            color: var(--white);
+            font-weight: bold;
+        }
+        .scroll {
+            margin: 30px;
+            height: calc(100% - 60px);
+            overflow: auto;
+            padding-right: 30px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) transparent;
+        }
+        .scroll.mason {
+            padding-right: 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+        }
+        .fullWidth {
+            grid-template-columns: 1fr;
+            text-align: justify;
+        }
+        .fullWidth strong {
+            display: block;
+        }
+        .grid-item {
+            display: grid;
+            grid-template: auto max-content / 1fr;
+            width: calc((100% / 4) - 31px);
+            height: 300px;
+            margin: 0 30px 30px 0;
+        }
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+        .charInfo {
+            background: var(--accent-5);
+            padding: 20px;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+        .charInfo span {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-family: var(--bodyFont);
+            font-size: var(--xsBody);
+            letter-spacing: 1px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        .charInfo span a {
+            color: var(--accent);
+        }
+        @media only screen and (max-width: 1200px) {
+            .grid-item {
+                width: calc((100% / 3) - 31px);
+            }
+        }
+        @media only screen and (max-width: 800px) {
+            .grid-item {
+                width: calc((100% / 2) - 31px);
+            }
+        }
+    </style>
+    
+    <script>
+        var $container;
+        var filters = {};
+        
+        $(function(){
+        
+          $container = $('.charlist');
+        
+        
+          $container.isotope();
+          // do stuff when checkbox change
+          $('.filters').on( 'change', function( jQEvent ) {
+            var $checkbox = $( jQEvent.target );
+            manageCheckbox( $checkbox );
+        
+            var comboFilter = getComboFilter( filters );
+        
+            $container.isotope({ filter: comboFilter });
+        
+          });
+        
+        });
+        
+        function getComboFilter( filters ) {
+          var i = 0;
+          var comboFilters = [];
+        
+          for ( var prop in filters ) {
+            var filterGroup = filters[ prop ];
+            // skip to next filter group if it doesn't have any values
+            if ( !filterGroup.length ) {
+              continue;
+            }
+            if ( i === 0 ) {
+              // copy to new array
+              comboFilters = filterGroup.slice(0);
+            } else {
+              var filterSelectors = [];
+              // copy to fresh array
+              var groupCombo = comboFilters.slice(0); // [ A, B ]
+              // merge filter Groups
+              for (var k=0, len3 = filterGroup.length; k < len3; k++) {
+                for (var j=0, len2 = groupCombo.length; j < len2; j++) {
+                  filterSelectors.push( groupCombo[j] + filterGroup[k] ); // [ 1, 2 ]
+                }
+        
+              }
+              // apply filter selectors to combo filters for next group
+              comboFilters = filterSelectors;
+            }
+            i++;
+          }
+        
+          var comboFilter = comboFilters.join(', ');
+          return comboFilter;
+        }
+        
+        function manageCheckbox( $checkbox ) {
+          var checkbox = $checkbox[0];
+          var group = $checkbox.parents('.filtergroup').attr('data-filter-group');
+          
+          // create array for filter group, if not there yet
+          var filterGroup = filters[ group ];
+          
+          if ( !filterGroup ) {
+            filterGroup = filters[ group ] = [];
+          }
+        
+          var isAll = $checkbox.hasClass('all');
+          
+          // reset filter group if the all box was checked
+          if ( isAll ) {
+            delete filters[ group ];
+            if ( !checkbox.checked ) {
+              checkbox.checked = 'checked';
+            }
+          }
+          
+          // index of
+          var index = $.inArray( checkbox.value, filterGroup );
+          
+          if ( checkbox.checked ) {
+            var lSelector = isAll ? 'label' : 'label.all';
+            var iSelector = isAll ? 'input' : 'input.all';
+            $checkbox.parent().siblings(lSelector).removeClass('is-checked');
+            $checkbox.parent().addClass('is-checked');
+            $checkbox.parent().siblings(lSelector).children(iSelector).prop('checked', false);
+            
+        
+            if ( !isAll && index === -1 ) {
+              // add filter to group
+              filters[ group ].push( checkbox.value );
+            }
+          } else if ( !isAll ) {
+            // remove filter from group
+            filters[ group ].splice( index, 1 );
+            
+            // if unchecked the last box, check the all
+            if (filters[group].length == 0) {
+              $checkbox.parent().siblings('label.all').addClass('is-checked');
+              $checkbox.parent().siblings().children('input.all').prop('checked', true);
+            }
+            $checkbox.parent().removeClass('is-checked');
+          }
+        
+        }
+    </script>
+</html>

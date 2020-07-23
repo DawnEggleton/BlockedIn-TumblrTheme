@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <!---- theme by http://codesbylux.tumblr.com --->
+        <title>PAGE TITLE</title>
+        <link rel="shortcut icon" href="https://64.media.tumblr.com/03a9fb4f8ea2adef05823e8837d53c00/f085a8c0d0f1a575-42/s250x400/a44beae897fa1f73149c018a72bdf067b9e9b62b.png">
+        <script src="https://kit.fontawesome.com/66e864331c.js" crossorigin="anonymous"></script>
+        <script src="https://dawneggleton.github.io/scripts/jquery-1.12.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    </head>
+    
+    
+    <body>
+        <header>
+            <a></a>
+            <h1>PAGE TITLE</h1>
+        </header>
+        <aside>
+            <a href="BLOG URL FOR MAIN PAGE">
+                <i class="fal fa-home"></i>
+                <b>home</b>
+            </a>
+            <!-- SIDE LINK START -->
+            <a href="URL">
+                <i class="fal fa-iconname"></i>
+                <b>pagename</b>
+            </a>
+            <!-- SIDE LINK END -->
+        </aside>
+        <section class="static">
+            <div class="scroll mason">
+                <div class="masonry">
+                
+                    <!-- TAG GROUP START -->
+                    <article class="grid-item">
+                        <h2>Tag Group Title</h2>
+                        <a href="/tagged/tag1">tag 1</a>
+                        <a href="/tagged/tag2">tag 2</a>
+                        <a href="/tagged/tag3">tag 3</a>
+                    </article>
+                    <!-- TAG GROUP END -->
+                    
+                </div>
+            </div>
+        </section>
+    </body>
+    
+    
+    <style>
+        /*VARIABLES*/
+        :root {
+            --topBar: 100px;
+            --leftBar: 100px;
+            --serifFont: 'Cormorant', serif;
+            --bodyFont: 'Open Sans', sans-serif;
+            
+            --xsBody: 8px;
+            --sBody: 10px;
+            --mBody: 12px;
+            --lBody: 14px;
+            --xlBody: 16px;
+            
+            --xsHead: 20px;
+            --sHead: 24px;
+            --mHead: 28px;
+            --lHead: 32px;
+            --xlHead: 36px;
+            
+            --white-20: rgba(255, 255, 255, 0.2);
+            --white-80: rgba(255, 255, 255, 0.80);
+            --white: rgba(255, 255, 255, 1);
+            
+            --accent-5: rgba(0, 0, 0, 0.05);
+            --accent-80: rgba(0, 0, 0, 0.8);
+            --accent: rgba(0, 0, 0, 1);
+        }
+        body {
+            font-family: var(--bodyFont);
+            font-size: var(--mBody);
+            line-height: 200%;
+            letter-spacing: 0.5px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .tmblr-iframe.iframe-controls--desktop {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: max-content;
+            transform: scale(60%) translateX(-30%);
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--topBar);
+            background: var(--accent);
+            color: var(--white);
+            display: grid;
+            grid-template: 1fr / auto max-content;
+            grid-column-gap: 50px;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 30px;
+        }
+        header h1 {
+            font-family: var(--serifFont);
+            text-transform: lowercase;
+            font-size: var(--xlHead);
+        }
+        header a {
+            color: var(--white);
+            font-family: var(--bodyFont);
+            font-size: var(--sBody);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        aside {
+            position: fixed;
+            top: var(--topBar);
+            left: 0;
+            height: calc(100vh - var(--topBar));
+            width: var(--leftBar);
+            background: var(--accent-80);
+            color: var(--white);
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        aside a {
+            display: grid;
+            grid-row-gap: 7px;
+            width: 60px;
+            height: 60px;
+            background: var(--white-20);
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            padding: 5px;
+            text-align: center;
+            color: var(--white-80);
+            
+        }
+        aside a.active,
+        aside a:hover {
+            color: var(--white);
+            background: var(--accent);
+        }
+        aside a i {
+            font-size: var(--xlBody);
+            align-self: end;
+        }
+        aside a b {
+            font-family: var(--bodyFont);
+            font-size: var(--xsBody);
+            letter-spacing: 1px;
+            line-height: 100%;
+            text-transform: uppercase;
+        }
+        section {
+            position: fixed;
+            top: var(--topBar);
+            right: 0;
+            width: calc(100% - var(--leftBar));
+            height: calc(100vh - var(--topBar));
+            background: var(--white);
+            box-sizing: border-box;
+            display: none;
+            grid-template: 1fr / 1fr 1fr;
+            letter-spacing: 1px;
+            font-size: var(--lBody);
+            font-weight: 300;
+        }
+        section.active,
+        section.static {
+            display: grid;
+        }
+        section.static {
+            grid-template: 1fr / 1fr;
+        }
+        section > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        section h2 {
+            font-family: var(--serifFont);
+            font-size: var(--lHead);
+            text-transform: lowercase;
+            font-weight: 700;
+            margin: 50px 0 15px 0;
+        }
+        section h2:first-child {
+            margin-top: 0;
+        }
+        section strong {
+            font-family: var(--serifFont);
+            font-size: var(--xsHead);
+            font-style: italic;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+        .scroll {
+            margin: 30px;
+            height: calc(100% - 60px);
+            overflow: auto;
+            padding-right: 30px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) transparent;
+        }
+        .scroll.mason {
+            padding-right: 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+        }
+        .fullWidth {
+            grid-template-columns: 1fr;
+            text-align: justify;
+        }
+        .fullWidth strong {
+            display: block;
+        }
+        article {
+            background: var(--accent-5);
+            width: calc(25% - 30px);
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        article h2 {
+            display: block;
+            width: 100%;
+            height: max-content;
+            background: var(--accent-5);
+            color: var(--accent);
+            font-family: var(--serifFont);
+            font-size: var(--sHead);
+            text-transform: lowercase;
+            font-weight: 700;
+            letter-spacing: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 0;
+        }
+        article a {
+            display: block;
+            width: 100%;
+            height: max-content;
+            margin: 0;
+            box-sizing: border-box;
+            padding: 5px 20px;
+            font-family: var(--bodyFont);
+            font-size: var(--xsBody);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            line-height: 100%;
+            color: var(--accent);
+        }
+        article a:first-of-type {
+            margin-top: 20px;
+        }
+        article a:last-of-type {
+            margin-bottom: 20px;
+        }
+    </style>
+    
+    <script>
+        var elem = document.querySelector('.masonry');
+        var msnry = new Masonry( '.masonry', {
+          itemSelector: '.grid-item',
+          gutter: 30,
+          horizontalOrder: true
+        });
+    </script>
+</html>

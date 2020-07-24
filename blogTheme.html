@@ -80,13 +80,13 @@
                             
                             {block:Text}
                                 {block:Title}<h2>{Title}</h2>{/block:Title}
-                                <div class="ans" style="padding-top:0">
+                                <div class="ans">
                                     {Body}
                                 </div>
                             {/block:Text}
                             
                             {block:Quote}
-                                {Quote}
+                                <div class="ans">{Quote}</div>
                                 <div class="source">&mdash; {Source}</div>
                             {/block:Quote}
                             
@@ -505,6 +505,12 @@
             }            
             .chat li + br:last-child {
               display: none;
+            }
+            .source {
+              font-size: var(--sBody);
+              text-transform: uppercase;
+              font-weight: bold;
+              padding: 0 40px 20px 60px;
             }
         </style>
         

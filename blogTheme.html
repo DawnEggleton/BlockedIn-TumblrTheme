@@ -502,7 +502,7 @@
             }
             p:first-child {
                 margin-top: 0;
-            }            
+            }
             .chat li + br:last-child {
               display: none;
             }
@@ -511,6 +511,15 @@
               text-transform: uppercase;
               font-weight: bold;
               padding: 0 40px 20px 60px;
+            }
+            .smlVid { display: none; }
+            @media only screen and (max-width: 1260px) {
+                .smlVid {
+                    display: block;
+                }
+                .fullVid {
+                    display: none;
+                }
             }
         </style>
         

@@ -1,8 +1,9 @@
+<!-- CHARACTER BASE -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <!---- theme by http://codesbylux.tumblr.com --->
-        <title>CHARACTER NAME</title>
+        <title>Name</title>
         <link rel="shortcut icon" href="https://64.media.tumblr.com/03a9fb4f8ea2adef05823e8837d53c00/f085a8c0d0f1a575-42/s250x400/a44beae897fa1f73149c018a72bdf067b9e9b62b.png">
         <script src="https://kit.fontawesome.com/66e864331c.js" crossorigin="anonymous"></script>
         <script src="https://dawneggleton.github.io/scripts/jquery-1.12.1.min.js"></script>
@@ -27,75 +28,74 @@
             <span>
                 <a href="/characters"><i class="fas fa-angle-left"></i> Back</a>
                 &nbsp;&nbsp;&nbsp;
-                <a href="MAIN BLOG URL"><i class="far fa-home"></i> Home</a>
+                <a href="https://thisantigravity.tumblr.com"><i class="far fa-home"></i> Home</a>
             </span>
-            <h1>CHARACTER NAME</h1>
+            <h1>First Last</h1>
         </header>
         <aside>
             <div class="tabs">
-                <a href="javascript:void(0)" id="tab-site" class="tab active">
+                <a href="javascript:void(0)" id="tab-default" class="tab active">
                     <i class="fal fa-link"></i>
                     <b>Links</b>
                 </a>
-                <a href="javascript:void(0)" id="tab-SITENAME" class="tab">
-                    <i class="fal fa-iconname"></i>
+                <a href="javascript:void(0)" id="tab-site" class="tab">
+                    <i class="fal fa-pegasus"></i>
                     <b>Site 1</b>
                 </a>
             </div>
         </aside>
         <section id="tab-default-content" class="content active">
-            <img src="IMAGE URL" />
+            <img src="https://placehold.it/2000" />
             <div class="scroll">
                 Select an application in the side menu to view related character details.<br>
                 <h2>Links</h2>
                 <ul>
-                    <li><a href="URL">link</a></li>
-                    <li><a href="URL">link</a></li>
-                    <li><a href="URL">link</a></li>
+                    <li><a href="/tagged/c:-name">Blog Posts</a></li>
+                    <li><a href="/tagged/i:-name">Images</a></li>
+                    <li><a href="/tagged/s:-name">w/ Character</a></li>
                 </ul>
             </div>
         </section>
-        <section id="tab-SITENAME-content" class="content">
+        <!-- APPLICATIONS -->
+        
+        <!-- SITE ONE START -->
+        <section id="tab-site-content" class="content">
             <img src="https://placehold.it/2000" />
             <div class="scroll">
-                <!-- SECTION TITLE START -->
                 <h2>Section</h2>
-                <!-- SECTION TITLE END -->
-                
-                <!-- TWO COLUMN START -->
                 <div class="grid">
-                    <!-- ONE LINER START -->
                     <span>
                         <strong>title.</strong>
-                        answer
+                        Answer
                     </span>
-                    <!-- ONE LINER END -->
                 </div>
-                <!-- TWO COLUMN END -->                
-                
-                <!-- SECTION TITLE START -->
                 <h2>Section</h2>
-                <!-- SECTION TITLE END -->
-                
-                <!-- ONE COLUMN START -->
                 <div class="grid fullWidth">
-                    <!-- SHORT OR LONG ANSWER START -->
                     <span>
                         <strong>title.</strong>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <ul>
+                            <li></li>
+                        </ul>
                     </span>
-                    <!-- SHORT OR LONG ANSWER END -->
-                    <!-- LONG WITHOUT TITLE START -->
-                    <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </span>
-                    <!-- LONG WITHOUT TITLE END -->
                 </div>
-                <!-- ONE COLUMN END -->
-                
-                <!-- additionally, each span can be written as <span class="rel">content</span> or <span class="freeform">content</span> to alter the colors of some bold, italic, and hyperlink text -->
+                <h2>Relationships</h2>
+                <div class="grid fullWidth">
+                    <span class="rel">
+                        <strong>title.</strong>
+                        <ul>
+                            <li><a>name</a>— role</li>
+                        </ul>
+                    </span>
+                </div>
+                <h2>Section</h2>
+                <div class="grid fullWidth">
+                    <span class="freeform">
+                        Text
+                    </span>
+                </div>
             </div>
         </section>
+        <!-- SITE ONE STOP -->
     </body>
     
     
@@ -123,6 +123,8 @@
             --white-80: rgba(255, 255, 255, 0.80);
             --white: rgba(255, 255, 255, 1);
             
+            --black-10: rgba(0, 0, 0, 0.1);
+            --black-30: rgba(0, 0, 0, 0.3);
             --black-80: rgba(0, 0, 0, 0.8);
             --black: rgba(0, 0, 0, 1);
             
@@ -320,6 +322,76 @@
             display: grid;
             grid-template-columns: 60px 60px;
             grid-column-gap: 20px;
+        }
+        .freeform h1 {
+            font-family: var(--serifFont);
+            font-size: var(--mHead);
+            text-transform: lowercase;
+            font-weight: 700;
+            margin: 50px 0 30px;
+            text-align: center;
+        }
+        .freeform h2 {
+            font-family: var(--serifFont);
+            font-size: var(--xsHead);
+            text-transform: lowercase;
+            font-weight: 700;
+            margin: 50px 0 30px;
+            text-align: center;
+        }
+        .freeform h1:first-child,
+        .freeform h2:first-child {
+            margin-top: 0;
+        }
+        .freeform h3 {
+          font-size: var(--xsBody);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: var(--black);
+          margin: 0 auto 20px;
+          max-width: 250px;
+          text-align: justify;
+        }
+        .freeform h1 + h2,
+        .freeform h1 + h3,
+        .freeform h2 + h3 {
+          margin-top: -20px;
+        }
+        .centerHeaders h1,
+        .centerHeaders h2 {
+          text-align: center;
+        }
+        .grid .fullWidth {
+            grid-column: span 2;
+        }
+        .factsSpread {
+            font-size: 0;
+        }
+        .factsSpread span {
+            display: inline-block;
+            background: var(--accent-80);
+            color: var(--white);
+            font-family: var(--bodyFont);
+            font-size: var(--xsBody);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            line-height: var(--xsBody);
+            padding: 7px 10px;
+            border-radius: 10px;
+            margin: 0 5px 5px 0;
+        }
+        .scale {
+            width: 100%;
+            height: 5px;
+            background: var(--black-10);
+            margin: 5px 0;
+            border: 1px solid var(--black-30);
+        }
+        .scale span {
+            height: 100%;
+            background: var(--accent);
+            display: block;
         }
     </style>
     
